@@ -1,0 +1,481 @@
+random(min, max)
+    return math(0, 'random')*(max - min + 1) + min
+
+section.header
+    height 940px
+    position relative
+    color: #ffffff
+    font-size 17px
+
+    @media (max-width: $breakpoints.xl)
+        height 890px
+
+    @media (max-width: $breakpoints.l)
+        height 810px
+
+    @media (max-width: $breakpoints.m)
+        height 760px
+        font-size 16px
+
+    @media (max-width: $breakpoints.s)
+        height 520px
+        font-size 15px
+
+    @media (max-width: $breakpoints.xs)
+        font-size 14px
+
+    .background
+        position absolute
+        top -10vh
+        left 0
+        width 100%
+        height calc(100% + 10vh)
+        background linear-gradient(135deg, #330867 0%,#31a7bb 100%)
+        transform skewY(-5deg)
+        box-shadow 0px 0px 50px rgba(60, 117, 162, 0.4)
+
+    .navigation
+        position absolute
+        top 24px
+        right 65px
+        font-weight 300
+
+        @media (max-width: $breakpoints.l)
+            right 45px
+
+        @media (max-width: $breakpoints.m)
+            right 25px
+
+        @media (max-width: $breakpoints.s)
+            right 0
+            left 0
+            text-align center
+
+        .item
+            display inline-block
+            position relative
+            vertical-align middle
+            padding 10px
+            margin-left 7px
+            margin-right 7px
+
+            @media (max-width: $breakpoints.s)
+                margin-left 0
+                margin-right 0
+
+            @media (max-width: $breakpoints.xs)
+                padding-right 4px
+                padding-left 4px
+
+            &.github
+                background-image url(../../static/svg/github.svg)
+                background-repeat no-repeat
+                background-position center center
+                width 40px
+                height 40px
+
+            &.underline
+                &::after
+                    right 10px
+                    bottom 2px
+                    left 10px
+
+                    @media (max-width: $breakpoints.xs)
+                        right 4px
+                        left 4px
+
+    .title
+        position absolute
+        top 190px
+        left 50%
+
+        @media (max-width: $breakpoints.l)
+            top 180px
+            transform scale(0.9)
+
+        @media (max-width: $breakpoints.m)
+            top 175px
+            transform scale(0.8)
+
+        @media (max-width: $breakpoints.s)
+            top 170px
+            transform scale(0.7)
+
+        @media (max-width: $breakpoints.xs)
+            top 165px
+
+        .keppler
+            position absolute
+            left -60px
+            top -40px
+            width 259px
+            height 77px
+            background-image url(../../static/svg/logo-keppler.svg)
+
+        .sky
+            position absolute
+            left -270px
+            top -85px
+            width 264px
+            height 153px
+            background-image url(../../static/svg/logo-sky.svg)
+
+        .avatar
+            position absolute
+            left -165px
+            top -40px
+            width 50px
+            height 61px
+            background-image url(../../static/svg/logo-avatar.svg)
+            animation logo-avatar 6s ease-in-out infinite alternate
+            will-change transform
+
+            @keyframes logo-avatar
+                0%
+                    transform translateX(-10px) translateY(-5px) translateZ(0)
+                100%
+                    transform translateX(10px) translateY(5px) translateZ(0)
+
+    .sub-title
+        position absolute
+        top 250px
+        left 0
+        right 0
+        padding-left 20px
+        padding-right 20px
+        text-align center
+        line-height 1.5em
+        font-size 25px
+        font-weight 300
+
+        @media (max-width: $breakpoints.l)
+            top 240px
+            font-size 23px
+
+        @media (max-width: $breakpoints.m)
+            top 235px
+            font-size 21px
+
+        @media (max-width: $breakpoints.s)
+            top 230px
+            font-size 19px
+
+        @media (max-width: $breakpoints.xs)
+            top 225px
+            font-size 17px
+
+    .demo
+        position absolute
+        top 505px
+        left 50%
+
+        @media (max-width: $breakpoints.xl)
+            top 485px
+            transform scale(0.8)
+
+        @media (max-width: $breakpoints.l)
+            top 445px
+            transform scale(0.6)
+
+        @media (max-width: $breakpoints.m)
+            top 425px
+            transform scale(0.5)
+
+        @media (max-width: $breakpoints.s)
+            display none
+
+        .speaker
+            position absolute
+            top -150px
+            left -245px
+            opacity 0
+            transform scale(0.8, 0.8)
+            transition-property transform, opacity
+            transition-duration 0.75s, 0.75s
+            transition-timing-function cubic-bezier(0.42, 0, 0.70, 1.40), ease-in-out
+            will-change transform
+
+            video
+                border-radius 5px
+
+            .icon
+                position absolute
+                left calc(50% - 20px)
+                top calc(100% + 10px)
+                width 40px
+                height 40px
+                background-image url(../../static/svg/demo-speaker.svg)
+                background-repeat no-repeat
+                background-position center center
+
+                .label
+                    position absolute
+                    top calc(100% + 6px)
+                    left -50px
+                    right -50px
+                    white-space nowrap
+                    text-align center
+
+        .audience
+            position absolute
+            top -150px
+            left -245px
+            transform translateX(-120%)
+            opacity 0
+            transition transform 0.75s, opacity 0.75s
+            transition-timing-function cubic-bezier(0.42, 0, 0.70, 1.40), ease-in-out
+            will-change transform
+
+            video
+                border-radius 5px
+
+            .icon
+                position absolute
+                left calc(50% - 20px)
+                top calc(100% + 10px)
+                width 40px
+                height 40px
+                background-image url(../../static/svg/demo-audience.svg)
+                background-repeat no-repeat
+                background-position center center
+
+                .label
+                    position absolute
+                    top calc(100% + 6px)
+                    left -50px
+                    right -50px
+                    white-space nowrap
+                    text-align center
+
+            .url-bar
+                position absolute
+                top 1.5%
+                left 30%
+                right 30%
+                height 7.5%
+                border-radius 3px
+                background #adadad
+
+            .white-cache
+                position absolute
+                top 0
+                left 30%
+                right 6px
+                height 10.7%
+                background #fffeff
+
+        .url
+            position absolute
+            top -30px
+            left 61px
+            font-size 13px
+            letter-spacing 0.4px
+            font-family Courier
+            color #ffffff
+            opacity 0
+            transform translateX(0px) translateY(0px)
+            transition transform 1s cubic-bezier(0.75, 0, 0.58, 1)
+            will-change transform
+
+        .bars
+            position absolute
+            top 0
+            left 0
+            opacity 0
+            transition opacity 0.25s
+            will-change opacity
+
+            .bar
+                position absolute
+                top 0
+                left 0
+                animation-name header-bar-translation
+                animation-iteration-count infinite
+                animation-timing-function linear
+                animation-play-state paused
+                will-change transform
+
+                &.color-1
+                    background #a3d1c6
+
+                &.color-2
+                    background #ffffff
+
+                &.color-3
+                    background #e67553
+
+                &.color-4
+                    background #fbfb8c
+
+                &.size-1
+                    width 100px
+                    height 5px
+
+                &.size-2
+                    width 60px
+                    height 3px
+
+                &.size-3
+                    width 80px
+                    height 4px
+
+                for $num in (0..50)
+                    &.animation-{$num}
+                        animation-duration unit(random(0.2, 0.5), 's')
+
+                for $num in (0..50)
+                    &.pos-{$num}
+                        top unit(random(-50, 50), 'px')
+
+            @keyframes header-bar-translation
+                0%
+                    transform translateX(200px)
+                100%
+                    transform translateX(-200px)
+
+        &.step-1
+            .speaker
+                opacity 1
+                transition-duration 0.5s, 0.5s
+                transform scale(1, 1)
+
+        &.step-2
+            .speaker
+                transform translateX(60%)
+                transition-duration 0.75s, 0.75s
+
+            .audience
+                transform translateX(-60%)
+                transition-delay 0.25s, 0.25s
+                opacity 1
+
+        &.step-3
+            .url
+                opacity 1
+                transform translateX(-432px) translateY(-111px)
+
+        &.step-4
+            .bars
+                opacity 1
+
+                .bar
+                    animation-play-state running
+
+        &.step-5
+            .bars
+                opacity 0
+
+                .bar
+                    animation-play-state running
+
+        &.step-6
+            .speaker
+                opacity 0
+                transform translateX(60%) scale(0.8, 0.8)
+                transition-duration 0.5s, 0.5s
+                transition-timing-function ease-in-out, ease-in-out
+
+            .audience
+                opacity 0
+                transform translateX(-60%) scale(0.8, 0.8)
+                transition-duration 0.5s, 0.5s
+                transition-timing-function ease-in-out, ease-in-out
+
+            .url
+                opacity 0
+                transition-duration 0.2s
+
+    .get-started-button
+        position absolute
+        bottom 120px
+        left calc(50% - 117px)
+        width 234px
+        height 43px
+        overflow hidden
+        border-radius 22px
+
+        .out
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+            border 2px solid #fff
+            border-radius 22px
+            line-height 39px
+            text-align center
+
+        .hover
+            position absolute
+            top 0
+            left 0
+            width 100%
+            height 100%
+            border-radius 22px
+            border-radius 22px
+            line-height 43px
+            text-align center
+            overflow hidden
+            background #ffffff
+            transform translateX(-100%)
+            transition transform 0.5s cubic-bezier(0.75, 0, 0.25, 1)
+            will-change transform
+
+            .inner
+                position absolute
+                top 0
+                left 0
+                width 100%
+                height 100%
+                color #3473a0
+                border-radius 22px
+                transform translateX(100%)
+                transition transform 0.5s cubic-bezier(0.75, 0, 0.25, 1)
+                will-change transform
+
+        .no-touch &
+            &:hover
+                .hover
+                    transform translateX(0%)
+
+                    .inner
+                        transform translateX(0%)
+
+    .scroll-button
+        display block
+        position absolute
+        bottom 50px
+        left calc(50% - 20px)
+        width 40px
+        height 40px
+
+        .mouse
+            display block
+            position absolute
+            top 7px
+            left 12px
+            width 17px
+            height 26px
+            border-radius 9px
+            border 1px solid #fff
+
+            .wheel
+                display block
+                position absolute
+                top 2px
+                left 7px
+                width 1px
+                height 4px
+                background #ffffff
+                animation scroll-mouse-wheel 1.5s linear infinite
+                will-change transform
+
+                @keyframes scroll-mouse-wheel
+                    0%
+                        transform translateY(0px) scaleY(0)
+                    30%
+                        transform translateY(5px) scaleY(1)
+                    60%
+                        transform translateY(10px) scaleY(0)
+                    100%
+                        transform translateY(10px) scaleY(0)
